@@ -23,7 +23,11 @@ function Book(title, author, numOfPages) {
   this.info = function() {
     console.log()
   }
+  this.hasRead = false;
+  //add not read/read property
 }
+
+//add remove book from the library btn
 
 function addBookToLibrary(book) {
   myLibrary.push(book)
@@ -31,16 +35,40 @@ function addBookToLibrary(book) {
   const newBookTitle = document.createElement("h3")
   const newBookAuthor = document.createElement("p")
   const newBookNumOfPages = document.createElement("p")
+  const removeBookBtn = document.createElement('button')
+  const readBookBtn = document.createElement('button')
 
+  
   newBookTitle.textContent = book.title;
   newBookAuthor.textContent = book.author;
-  newBookNumOfPages.textContent = book.numOfPages
+  newBookNumOfPages.textContent = book.numOfPages;
+  removeBookBtn.textContent = 'Remove book from Library'
+  readBookBtn.textContent = 'Read book'
+
+  removeBookBtn.addEventListener('click', () => {
+    newBook.remove();
+    const index = myLibrary.indexOf(book);
+    if (index > -1) {
+      myLibrary.splice(index, 1)
+    }
+    console.log(myLibrary)
+  })
+
+  readBookBtn.addEventListener('click', () => {
+    if (book.hasRead === false) {
+      book.hasRead = true;
+    } else if (book.hasRead === true) {
+      book.hasRead = false
+    }
+    console.log(myLibrary)
+  })
 
   bookList.appendChild(newBook);
   newBook.appendChild(newBookTitle);
   newBook.appendChild(newBookAuthor);
   newBook.appendChild(newBookNumOfPages);
-
+  newBook.appendChild(removeBookBtn);
+  newBook.appendChild(readBookBtn)
 }
 
 function showLibrary() {
