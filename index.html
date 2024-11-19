@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Practice</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <main>
+        <h2>My Library</h2>
+        <ul class="book-list"></ul>
+        <dialog>
+            <button autofocus>Close</button>
+            <form class="book-form" action="">
+                <label for="book-title">Book title:</label>
+                <input type="text" id="book-title" name="book-title">
+                <label for="book-author">Book author:</label>
+                <input type="text" id="book-author" name="book-author">
+                <label for="pages-number">Number of pages:</label>
+                <input type="number" id="pages-number" name="pages-number">
+                <button class="add-book-btn" type="submit">Add book</button>
+            </form>
+        </dialog>
+            <button>Add a book</button>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>
