@@ -1,3 +1,16 @@
+class Book {
+  constructor(title, author, numOfPages) {
+    this.title = title;
+    this.author = author;
+    this.numOfPages = numOfPages;
+    this.hasRead = false;
+  }
+
+  get bookInfo() {
+    return `This book is ${this.title} by ${this.author} and it has ${this.numOfPages} pages`
+  }
+}
+
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
@@ -16,16 +29,6 @@ const bookList = document.querySelector(".book-list");
 const bookForm = document.querySelector(".book-form");
 const myLibrary = [];
 
-function Book(title, author, numOfPages) {
-  this.title = title;
-  this.author = author;
-  this.numOfPages = numOfPages;
-  this.info = function() {
-    console.log()
-  }
-  this.hasRead = false;
-  //add not read/read property
-}
 
 //add remove book from the library btn
 
